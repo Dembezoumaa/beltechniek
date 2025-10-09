@@ -149,7 +149,7 @@ export default function WerkenBij() {
               <div>
                 <h3 className="font-bold text-gray-800 mb-1">Goede beheersing van Nederlands of Engels</h3>
                 <p className="text-gray-600">
-                  Basiskennis van Nederlands of Engels is vereist voor communicatie met collega's en klanten.
+                 Basiskennis van Nederlands of Engels is vereist voor communicatie met collega&apos;s en klanten.
                 </p>
               </div>
             </div>

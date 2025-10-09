@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 
 function Footer() {
   return (
@@ -22,13 +23,13 @@ function Footer() {
         <div className="min-w-[200px]">
           <div className="font-bold text-lg mb-3 text-black">Dienst Expert</div>
           <nav className="flex flex-col gap-2 text-sm text-black opacity-55">
-            <a href="/" className="hover:opacity-100 hover:text-[#40B9FF] transition">Home</a>
-            <a href="/over-ons" className="hover:opacity-100 hover:text-[#40B9FF] transition">Over ons</a>
-            <a href="/diensten" className="hover:opacity-100 hover:text-[#40B9FF] transition">Diensten</a>
-            <a href="/werken-bij" className="hover:opacity-100 hover:text-[#40B9FF] transition">Werken bij</a>
-            <a href="/contact" className="hover:opacity-100 hover:text-[#40B9FF] transition">Contact</a>
-            <a href="/algemene-voorwaarden" className="hover:opacity-100 hover:text-[#40B9FF] transition">Algemene voorwaarden</a>
-            <a href="/privacy" className="hover:opacity-100 hover:text-[#40B9FF] transition">Privacy Policy</a>
+            <Link href="/" className="hover:opacity-100 hover:text-[#40B9FF] transition">Home</Link>
+            <Link href="/over-ons" className="hover:opacity-100 hover:text-[#40B9FF] transition">Over ons</Link>
+            <Link href="/diensten" className="hover:opacity-100 hover:text-[#40B9FF] transition">Diensten</Link>
+            <Link href="/werken-bij" className="hover:opacity-100 hover:text-[#40B9FF] transition">Werken bij</Link>
+            <Link href="/contact" className="hover:opacity-100 hover:text-[#40B9FF] transition">Contact</Link>
+            <Link href="/algemene-voorwaarden" className="hover:opacity-100 hover:text-[#40B9FF] transition">Algemene voorwaarden</Link>
+            <Link href="/privacy" className="hover:opacity-100 hover:text-[#40B9FF] transition">Privacy Policy</Link>
           </nav>
         </div>
       </div>
@@ -61,13 +62,13 @@ function Footer() {
           
           {/* Rechts: AbraCreative */}
           <a 
-  href="https://wa.me/31611125344?text=Hallo%20AbtaCreative%2C%20ik%20heb%20een%20vraag%20over%20webdesign"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-sm font-bold hover:underline transition cursor-pointer"
->
-  AbtaCreative
-</a>
+            href="https://wa.me/31611125344?text=Hallo%20AbtaCreative%2C%20ik%20heb%20een%20vraag%20over%20webdesign"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold hover:underline transition cursor-pointer"
+          >
+            AbtaCreative
+          </a>
         </div>
       </div>
     </footer>

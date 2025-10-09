@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function PageHeader({ title, description }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function PageHeader({ title, description }) {
         }}>
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <a href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <img 
                 src="/logo.png" 
                 alt="Dienst Expert Logo" 
@@ -26,20 +27,20 @@ export default function PageHeader({ title, description }) {
                 <span className="text-[#40B9FF] text-xs md:text-sm font-bold">DIENST EXPERT</span>
                 <span className="text-[#40B9FF] text-[10px] md:text-xs">CLEANING SERVICE</span>
               </div>
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-5 text-xs">
-            <a href="/" className="text-white hover:text-[#40B9FF] transition">Home</a>
-            <a href="/over-ons" className="text-white hover:text-[#40B9FF] transition">Over ons</a>
-            <a href="/diensten" className="text-white hover:text-[#40B9FF] transition">Diensten</a>
-            <a href="/werken-bij" className="text-white hover:text-[#40B9FF] transition">Werken bij</a>
-            <a href="/contact" className="text-white hover:text-[#40B9FF] transition">Contact</a>
+            <Link href="/" className="text-white hover:text-[#40B9FF] transition">Home</Link>
+            <Link href="/over-ons" className="text-white hover:text-[#40B9FF] transition">Over ons</Link>
+            <Link href="/diensten" className="text-white hover:text-[#40B9FF] transition">Diensten</Link>
+            <Link href="/werken-bij" className="text-white hover:text-[#40B9FF] transition">Werken bij</Link>
+            <Link href="/contact" className="text-white hover:text-[#40B9FF] transition">Contact</Link>
             
-            <a href="/contact" className="bg-[#40B9FF] text-white px-4 py-1.5 rounded-full text-xs hover:bg-[#3AA8E8] transition whitespace-nowrap">
+            <Link href="/contact" className="bg-[#40B9FF] text-white px-4 py-1.5 rounded-full text-xs hover:bg-[#3AA8E8] transition whitespace-nowrap">
               Vraag offerte aan
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,48 +66,12 @@ export default function PageHeader({ title, description }) {
             backgroundColor: 'rgba(89, 89, 89, 0.95)',
           }}>
             <div className="flex flex-col py-4">
-              <a 
-                href="/" 
-                className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </a>
-              <a 
-                href="/over-ons" 
-                className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Over ons
-              </a>
-              <a 
-                href="/diensten" 
-                className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Diensten
-              </a>
-              <a 
-                href="/werken-bij" 
-                className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Werken bij
-              </a>
-              <a 
-                href="/contact" 
-                className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </a>
-              <a 
-                href="/contact" 
-                className="bg-[#40B9FF] text-white mx-6 mt-3 py-3 rounded-full text-center hover:bg-[#3AA8E8] transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Vraag offerte aan
-              </a>
+              <Link href="/" className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link href="/over-ons" className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition" onClick={() => setMobileMenuOpen(false)}>Over ons</Link>
+              <Link href="/diensten" className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition" onClick={() => setMobileMenuOpen(false)}>Diensten</Link>
+              <Link href="/werken-bij" className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition" onClick={() => setMobileMenuOpen(false)}>Werken bij</Link>
+              <Link href="/contact" className="text-white hover:text-[#40B9FF] hover:bg-white/10 px-6 py-3 transition" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <Link href="/contact" className="bg-[#40B9FF] text-white mx-6 mt-3 py-3 rounded-full text-center hover:bg-[#3AA8E8] transition" onClick={() => setMobileMenuOpen(false)}>Vraag offerte aan</Link>
             </div>
           </div>
         )}
