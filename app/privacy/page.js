@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <PageHeader 
         title="Privacy Policy" 
         description="Hoe wij omgaan met uw persoonsgegevens"

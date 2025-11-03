@@ -160,7 +160,7 @@ export default function OverOns() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Page Header met navbar en hero */}
       <PageHeader 
         title="Over ons" 
