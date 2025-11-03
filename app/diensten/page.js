@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import PageHeader from '../PageHeader'
 import Footer from '@/components/Footer'
 
@@ -8,6 +9,7 @@ export default function Diensten() {
       id: 'horeca',
       title: 'Horeca- en hospitality locaties',
       shortDesc: 'Professionele schoonmaak voor horecagelegenheden, sportscholen en andere publieke ruimten.',
+      image: '/dienst1.png',
       fullDesc: `
         Voor horeca en hospitality locaties is een schone en frisse uitstraling essentieel. Gasten en bezoekers vormen hun eerste indruk op basis van hygiëne en netheid. Dienst Expert zorgt ervoor dat uw locatie er altijd representatief uitziet.
         
@@ -25,6 +27,7 @@ export default function Diensten() {
       id: 'kantoor',
       title: 'Kantoor- en bedrijf ruimtes',
       shortDesc: 'Grondige en regelmatige reiniging van kantoren en werkplekken voor een prettige werkomgeving.',
+      image: '/dienst2.png',
       fullDesc: `
         Een schoon kantoor draagt bij aan productiviteit en werkplezier. Dienst Expert begrijpt het belang van een nette werkomgeving en biedt flexibele schoonmaakoplossingen voor bedrijven van elke omvang.
         
@@ -43,6 +46,7 @@ export default function Diensten() {
       id: 'oplevering',
       title: 'Opleveringsschoonmaak',
       shortDesc: 'Schoonmaak bij verhuur of verkoop na verbouwing. Wij zorgen voor een frisse en nette oplevering.',
+      image: '/dienst3.png',
       fullDesc: `
         Na een verbouwing, renovatie of voor oplevering bij verhuur of verkoop is grondige schoonmaak essentieel. Dienst Expert verzorgt opleveringsschoonmaak zodat uw pand er perfect uitziet voor de nieuwe bewoners of eigenaren.
         
@@ -61,6 +65,7 @@ export default function Diensten() {
       id: 'glas',
       title: 'Glasbewassing',
       shortDesc: 'Streepvrije glasbewassing, zowel aan de binnen- als buitenzijde. Voor een heldere uitstraling.',
+      image: '/dienst4.png',
       fullDesc: `
         Schone ramen zorgen voor een professionele uitstraling en meer daglicht in uw pand. Dienst Expert biedt professionele glasbewassing voor kantoren, winkels en bedrijfspanden.
         
@@ -78,6 +83,7 @@ export default function Diensten() {
       id: 'periodiek',
       title: 'Periodieke onderhoudsschoonmaak',
       shortDesc: 'Structurele schoonmaak op vaste momenten. Ideaal voor langdurige schone ruimtes.',
+      image: '/dienst5.png',
       fullDesc: `
         Met periodieke schoonmaak zorgt u ervoor dat uw pand structureel schoon blijft. Denk aan wekelijkse, tweewekelijkse of maandelijkse schoonmaakbeurten, volledig afgestemd op uw wensen en budget.
         
@@ -95,6 +101,7 @@ export default function Diensten() {
       id: 'diepte',
       title: 'Dieptereiniging',
       shortDesc: 'Intensieve reiniging van kantoren, keuken en sanitaire ruimtes. Voor optimale hygiëne.',
+      image: '/dienst6.png',
       fullDesc: `
         Soms is dagelijkse schoonmaak niet genoeg en is een grondige dieptereiniging nodig. Dienst Expert verzorgt intensieve schoonmaak waarbij elk detail wordt aangepakt voor optimale hygiëne en veiligheid.
         
@@ -103,7 +110,7 @@ export default function Diensten() {
       services: [
         'Intensieve vloerbehandeling',
         'Ontkalking sanitair',
-        'Ontv professionele keukenreiniging',
+        'Professionele keukenreiniging',
         'Hoogwerkstofzuigen',
         'Meubels en inventaris grondig reinigen'
       ]
@@ -111,7 +118,7 @@ export default function Diensten() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Page Header */}
       <PageHeader 
         title="Onze Diensten" 
@@ -138,11 +145,16 @@ export default function Diensten() {
               id={service.id}
               className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
             >
-              {/* Image Placeholder */}
+              {/* Image */}
               <div className="w-full md:w-1/2">
-                <div className="bg-gradient-to-br from-[#40B9FF] to-[#0EA5E9] rounded-2xl h-64 md:h-80 flex items-center justify-center">
-                  <span className="text-white text-6xl">🧹</span>
-                </div>
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={500}
+                  height={320}
+                  className="rounded-2xl w-full h-auto object-cover"
+                  priority={index === 0}
+                />
               </div>
 
               {/* Content */}
@@ -167,8 +179,6 @@ export default function Diensten() {
                     ))}
                   </ul>
                 </div>
-
-                
               </div>
             </div>
           ))}
