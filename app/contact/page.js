@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useScrollAnimation } from '../hooks/useScrollAnimation' // Pas pad aan indien nodig
 import PageHeader from '../PageHeader'
 import Footer from '@/components/Footer'
 
@@ -17,12 +17,12 @@ export default function Contact() {
     woonplaats: '',
     telefoon: '',
     soortDienst: '',
-    redenContact: '',
     bericht: ''
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // Hier later je API call toevoegen
     alert('Formulier verzonden! (Nog geen backend)')
     console.log(formData)
   }
@@ -45,21 +45,27 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             
-            {/* Formulier - MET ANIMATIE */}
+            {/* Formulier */}
             <div 
               ref={formRef}
               className={`transition-all duration-1000 ${
                 formVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <p className="text-sm text-gray-600 mb-6">Bedrijfsnaam (niet verplicht)</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-6">Stuur ons een bericht</h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
+                
+                {/* Bedrijfsnaam - Nu Verplicht */}
                 <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Bedrijfsnaam *
+                  </label>
                   <input
                     type="text"
                     name="bedrijfsnaam"
-                    placeholder="Bedrijfsnaam"
+                    placeholder="Uw bedrijfsnaam"
+                    required
                     value={formData.bedrijfsnaam}
                     onChange={handleChange}
                     className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
@@ -82,11 +88,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Achternaam
+                      Achternaam *
                     </label>
                     <input
                       type="text"
                       name="achternaam"
+                      required // Nu verplicht
                       value={formData.achternaam}
                       onChange={handleChange}
                       className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
@@ -169,25 +176,7 @@ export default function Contact() {
                   </select>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Reden van contact *
-                  </label>
-                  <select
-                    name="redenContact"
-                    required
-                    value={formData.redenContact}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 bg-white transition text-gray-900"
-                  >
-                    <option value="">Selecteer een optie</option>
-                    <option value="offerte">Offerte aanvragen</option>
-                    <option value="vraag">Vraag over diensten</option>
-                    <option value="klacht">Klacht</option>
-                    <option value="compliment">Compliment</option>
-                    <option value="anders">Anders</option>
-                  </select>
-                </div>
+                {/* Reden van contact is VERWIJDERD zoals gevraagd */}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -211,7 +200,7 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* Bedrijfsgegevens + Map - MET ANIMATIE */}
+            {/* Bedrijfsgegevens + Map */}
             <div 
               ref={infoRef}
               className={`space-y-8 transition-all duration-1000 ${
@@ -253,7 +242,7 @@ export default function Contact() {
 
               <div className="rounded-2xl overflow-hidden h-80 shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2425.7891234567!2d5.0636!3d52.6426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c8a3a7d5e6c123%3A0x456789abcdef!2sGroene%20Steen%2018%2C%201628%20WN%20Hoorn!5e0!3m2!1snl!2snl!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2418.6568173459286!2d5.0588433!3d52.6439722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609a130e0596b%3A0x6506060606060606!2sGroene%20Steen%2018%2C%201628%20WN%20Hoorn!5e0!3m2!1snl!2snl!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

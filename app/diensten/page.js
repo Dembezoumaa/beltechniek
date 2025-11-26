@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link' // Belangrijk voor interne navigatie
 import PageHeader from '../PageHeader'
 import Footer from '@/components/Footer'
 
@@ -7,118 +8,110 @@ export default function Diensten() {
   const services = [
     {
       id: 'horeca',
-      title: 'Horeca- en hospitality locaties',
-      shortDesc: 'Professionele schoonmaak voor horecagelegenheden, sportscholen en andere publieke ruimten.',
+      title: 'Horeca & Hospitality',
+      subtitle: 'Gastvrijheid begint bij een schone zaak',
       image: '/dienst1.png',
-      fullDesc: `
-        Voor horeca en hospitality locaties is een schone en frisse uitstraling essentieel. Gasten en bezoekers vormen hun eerste indruk op basis van hygiëne en netheid. Dienst Expert zorgt ervoor dat uw locatie er altijd representatief uitziet.
-        
-        Wij bieden schoonmaakdiensten voor restaurants, cafés, hotels, sportscholen, fysiotherapiepraktijken en andere publieke ruimten. Van dagelijks onderhoud tot grondige periodieke reiniging.
-      `,
-      services: [
-        'Dagelijkse schoonmaak van openbare ruimtes',
-        'Sanitaire voorzieningen',
-        'Keuken en bar reiniging',
+      description: [
+        "In de horeca zijn uw gasten uw strengste inspecteurs. Een vieze vloer of onfris toilet kan direct invloed hebben op uw reviews. Wij zorgen ervoor dat uw zaak elke dag weer fris en uitnodigend is, nog voordat de eerste gast binnenkomt.",
+        "Wij werken voor restaurants, hotels, cafés en sportscholen en snappen dat uw openingstijden heilig zijn."
+      ],
+      points: [
+        'Grondige reiniging van keuken en bar',
+        'Sanitair blinkend schoon en fris',
+        'Vloeronderhoud (ook voor intensief gebruik)',
         'Glas- en spiegelreiniging',
-        'Vloeronderhoud en behandeling'
+        'Dagelijks onderhoud van de publieke ruimtes'
       ]
     },
     {
       id: 'kantoor',
-      title: 'Kantoor- en bedrijf ruimtes',
-      shortDesc: 'Grondige en regelmatige reiniging van kantoren en werkplekken voor een prettige werkomgeving.',
+      title: 'Kantoor & Bedrijfsruimtes',
+      subtitle: 'Een frisse start van de werkdag',
       image: '/dienst2.png',
-      fullDesc: `
-        Een schoon kantoor draagt bij aan productiviteit en werkplezier. Dienst Expert begrijpt het belang van een nette werkomgeving en biedt flexibele schoonmaakoplossingen voor bedrijven van elke omvang.
-        
-        Of het nu gaat om een klein kantoor of een groot bedrijfspand, wij zorgen voor een professionele aanpak met aandacht voor detail. Onze diensten zijn volledig afgestemd op uw werkritme.
-      `,
-      services: [
-        'Werkplekken en bureaus',
-        'Vergaderruimtes',
-        'Sanitaire ruimtes',
-        'Keuken en pantry',
-        'Vloeren en tapijt',
-        'Prullenbakken legen'
+      description: [
+        "Niemand werkt lekker in een rommelig kantoor. Een schone werkplek zorgt voor meer werkplezier, minder ziekteverzuim en een professionele indruk als u klanten ontvangt.",
+        "Of u nu een klein kantoor heeft of een groot bedrijfspand: wij werken flexibel om uw medewerkers heen. U ziet ons niet, maar u ziet wél het resultaat."
+      ],
+      points: [
+        'Schoonmaken van werkplekken en bureaus',
+        'Sanitair hygiënisch reinigen',
+        'Vergaderruimtes representatief maken',
+        'Vloeren stofzuigen en dweilen',
+        'Afval afvoeren en prullenbakken legen'
       ]
     },
     {
       id: 'oplevering',
       title: 'Opleveringsschoonmaak',
-      shortDesc: 'Schoonmaak bij verhuur of verkoop na verbouwing. Wij zorgen voor een frisse en nette oplevering.',
+      subtitle: 'De aannemer is klaar, nu wij nog',
       image: '/dienst3.png',
-      fullDesc: `
-        Na een verbouwing, renovatie of voor oplevering bij verhuur of verkoop is grondige schoonmaak essentieel. Dienst Expert verzorgt opleveringsschoonmaak zodat uw pand er perfect uitziet voor de nieuwe bewoners of eigenaren.
-        
-        Wij verwijderen bouwstof, verfspetters en ander vuil dat achterblijft na werkzaamheden. Het resultaat: een schone, frisse ruimte die direct inzetbaar is.
-      `,
-      services: [
-        'Verwijdering bouwstof en vuil',
-        'Ramen en kozijnen reinigen',
-        'Vloeren zuigen en dweilen',
-        'Sanitair grondig schoonmaken',
-        'Keukenapparatuur reinigen',
-        'Spinnenweb en plinten'
+      description: [
+        "Een verbouwing of renovatie laat altijd sporen na: bouwstof, verfspetters en cementsluier. Voordat u het pand kunt gebruiken (of verhuren), moet het écht schoon zijn.",
+        "Dienst Expert pakt dit grondig aan. Wij maken het pand gebruiksklaar, zodat u of de nieuwe bewoners er direct in kunnen. Geen stress, gewoon de sleutel omdraaien en intrekken."
+      ],
+      points: [
+        'Verwijderen van al het bouwstof en grof vuil',
+        'Ramen, kozijnen en stickers verwijderen',
+        'Vloeren reinigen (bouwklaar of gebruiksklaar)',
+        'Sanitair en keukens gebruiksklaar maken',
+        'Verwijderen van spinnenwebben en stof op plinten'
       ]
     },
     {
       id: 'glas',
       title: 'Glasbewassing',
-      shortDesc: 'Streepvrije glasbewassing, zowel aan de binnen- als buitenzijde. Voor een heldere uitstraling.',
+      subtitle: 'Een heldere blik naar buiten',
       image: '/dienst4.png',
-      fullDesc: `
-        Schone ramen zorgen voor een professionele uitstraling en meer daglicht in uw pand. Dienst Expert biedt professionele glasbewassing voor kantoren, winkels en bedrijfspanden.
-        
-        Wij gebruiken professionele middelen en technieken voor streepvrij resultaat, zowel aan de binnen- als buitenzijde. Ook hoogwerkreiniging behoort tot onze mogelijkheden.
-      `,
-      services: [
-        'Binnen- en buitenzijde',
-        'Kozijnen en dorpels',
-        'Streepvrij resultaat',
-        'Hoogwerkreiniging mogelijk',
-        'Regelmatige contracten beschikbaar'
+      description: [
+        "Vies glaswerk doet afbreuk aan uw hele pand. Schone ramen zorgen voor een verzorgde uitstraling en laten meer daglicht binnen.",
+        "Wij wassen uw ramen streeploos schoon, zowel binnen als buiten. Ook voor lastig bereikbare ramen op hoogte draaien wij onze hand niet om."
+      ],
+      points: [
+        'Glasbewassing binnen en buiten',
+        'Reinigen van kozijnen en dorpels',
+        'Streeploos resultaat',
+        'Hoogwerkers inzetbaar voor lastige plekken',
+        'Ook op contractbasis (periodiek)'
       ]
     },
     {
       id: 'periodiek',
-      title: 'Periodieke onderhoudsschoonmaak',
-      shortDesc: 'Structurele schoonmaak op vaste momenten. Ideaal voor langdurige schone ruimtes.',
+      title: 'Periodiek Onderhoud',
+      subtitle: 'Structureel goed geregeld',
       image: '/dienst5.png',
-      fullDesc: `
-        Met periodieke schoonmaak zorgt u ervoor dat uw pand structureel schoon blijft. Denk aan wekelijkse, tweewekelijkse of maandelijkse schoonmaakbeurten, volledig afgestemd op uw wensen en budget.
-        
-        Periodieke schoonmaak voorkomt grote opbouw van vuil en zorgt voor een constante, representatieve uitstraling van uw bedrijf.
-      `,
-      services: [
-        'Wekelijks, tweewekelijks of maandelijks',
-        'Vaste contactpersoon',
-        'Flexibele planning',
-        'Afgestemd op uw budget',
-        'Langdurige samenwerking'
+      description: [
+        "Schoonmaak is geen eenmalige actie, het is bijhouden. Wilt u zeker weten dat uw pand het hele jaar door representatief blijft? Dan maken we samen een plan dat past bij uw budget en wensen.",
+        "Wekelijks, tweewekelijks of maandelijks: wij zorgen voor regelmaat en vaste gezichten."
+      ],
+      points: [
+        'Vaste frequentie (wekelijks/maandelijks)',
+        'Altijd een vaste contactpersoon',
+        'Planning die past in uw agenda',
+        'Duidelijke prijsafspraken',
+        'Ideaal voor VvE’s en bedrijfspanden'
       ]
     },
     {
       id: 'diepte',
       title: 'Dieptereiniging',
-      shortDesc: 'Intensieve reiniging van kantoren, keuken en sanitaire ruimtes. Voor optimale hygiëne.',
+      subtitle: 'De grote reset voor uw hygiëne',
       image: '/dienst6.png',
-      fullDesc: `
-        Soms is dagelijkse schoonmaak niet genoeg en is een grondige dieptereiniging nodig. Dienst Expert verzorgt intensieve schoonmaak waarbij elk detail wordt aangepakt voor optimale hygiëne en veiligheid.
-        
-        Ideaal voor jaarlijkse beurten, na evenementen of als voorbereid op speciale gelegenheden.
-      `,
-      services: [
-        'Intensieve vloerbehandeling',
-        'Ontkalking sanitair',
-        'Professionele keukenreiniging',
-        'Hoogwerkstofzuigen',
-        'Meubels en inventaris grondig reinigen'
+      description: [
+        "Soms is de dagelijkse schoonmaak niet genoeg. Vuil hoopt zich op plekken op die u niet direct ziet. Met een dieptereiniging gaan we een stap verder.",
+        "We reinigen machines, vloeren of sanitair tot in de kleinste naden. Perfect als jaarlijkse grote beurt of na een evenement. Alles voelt weer als nieuw."
+      ],
+      points: [
+        'Intensieve vloerbehandeling (schrobben/polymeren)',
+        'Dieptereiniging van sanitair (ontkalken)',
+        'Professionele keukenreiniging (HACCP-proof)',
+        'Stofzuigen op hoogte (lampen, buizen)',
+        'Meubilair en stoffering reinigen'
       ]
     }
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Page Header */}
       <PageHeader 
         title="Onze Diensten" 
@@ -128,53 +121,66 @@ export default function Diensten() {
       {/* Services Intro Text */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Dienst Expert Cleaning Services biedt een breed scala aan professionele schoonmaakdiensten. 
-            Van dagelijks onderhoud tot specialistische reiniging - wij leveren kwaliteit, flexibiliteit 
-            en een representatief resultaat. Altijd afgestemd op uw specifieke wensen en behoeften.
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Alles schoon, van vloer tot plafond
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            U zoekt geen schoonmaakbedrijf dat alleen even een doekje over de tafels haalt. U zoekt een partner die snapt dat een schone omgeving uw visitekaartje is. Of het nu gaat om een druk restaurant, een kantoor vol medewerkers of een oplevering na de bouw: Dienst Expert zorgt dat het geregeld is.
+          </p>
+          <p className="font-medium text-[#40B9FF]">
+            Hieronder vindt u waar wij goed in zijn.
           </p>
         </div>
       </section>
 
       {/* Detailed Services */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-6 space-y-16">
+        <div className="max-w-6xl mx-auto px-6 space-y-20">
           {services.map((service, index) => (
             <div 
               key={service.id} 
               id={service.id}
-              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center`}
             >
               {/* Image */}
               <div className="w-full md:w-1/2">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={500}
-                  height={320}
-                  className="rounded-2xl w-full h-auto object-cover"
-                  priority={index === 0}
-                />
+                <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
+                    priority={index === 0}
+                  />
+                </div>
               </div>
 
               {/* Content */}
               <div className="w-full md:w-1/2">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
                   {service.title}
                 </h3>
-                <div className="text-gray-600 leading-relaxed space-y-4 mb-6">
-                  {service.fullDesc.split('\n\n').map((paragraph, i) => (
-                    <p key={i}>{paragraph.trim()}</p>
+                <p className="text-[#40B9FF] font-semibold text-lg mb-6">
+                  {service.subtitle}
+                </p>
+                
+                <div className="text-gray-600 leading-relaxed space-y-4 mb-8">
+                  {service.description.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
                   ))}
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="font-bold text-gray-800 mb-3">Wat wij bieden:</h4>
-                  <ul className="space-y-2">
-                    {service.services.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-gray-600">
-                        <span className="text-[#40B9FF] mt-1">✓</span>
-                        <span>{item}</span>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-[#40B9FF] rounded-full"></span>
+                    Wat we doen:
+                  </h4>
+                  <ul className="space-y-3">
+                    {service.points.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-gray-700">
+                        <span className="text-[#40B9FF] font-bold mt-0.5">✓</span>
+                        <span className="text-sm md:text-base">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -185,25 +191,30 @@ export default function Diensten() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Conversie Knaller */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-[#40B9FF] to-[#0EA5E9] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div className="text-white md:max-w-xl">
-              <h2 className="text-2xl md:text-3xl font-bold mb-3">
-                Wilt u meer weten over onze diensten?
+          <div className="bg-gradient-to-br from-[#40B9FF] to-[#0EA5E9] rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+             
+            {/* Achtergrond decoratie */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div className="text-white md:max-w-xl relative z-10 text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Zoekt u een specifieke schoonmaakoplossing?
               </h2>
-              <p className="text-white/90">
-                Neem vrijblijvend contact op voor een persoonlijk adviesgesprek.
+              <p className="text-white/90 text-lg leading-relaxed">
+                Staat uw klus er niet tussen of twijfelt u wat u nodig heeft? Wij denken graag mee.
               </p>
             </div>
-            <div className="flex flex-col gap-3 w-full md:w-auto">
-              <a 
-                href="#contact" 
-                className="bg-white text-[#40B9FF] px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition text-center shadow-lg whitespace-nowrap"
+            
+            <div className="relative z-10 w-full md:w-auto">
+              <Link 
+                href="/contact" 
+                className="block w-full md:w-auto bg-white text-[#40B9FF] px-8 py-4 rounded-full font-bold hover:bg-gray-50 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 text-center whitespace-nowrap"
               >
-                Neem contact op →
-              </a>
+                Vraag vrijblijvend advies aan →
+              </Link>
             </div>
           </div>
         </div>

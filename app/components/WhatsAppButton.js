@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   
   // Vervang dit met het telefoonnummer van de klant (zonder + en spaties)
   const phoneNumber = '31640127061' // +31 6 40 12 70 61
-  const message = 'Hallo! Ik heb een vraag over jullie schoonmaakdiensten.'
+  const message = 'Hoi, ik ben op zoek naar een schoonmaakbedrijf en kom graag in contact.'
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
