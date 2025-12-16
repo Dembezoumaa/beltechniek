@@ -1,17 +1,8 @@
-'use client'
 import Link from 'next/link'
-import { useScrollAnimation } from '../app/hooks/useScrollAnimation'
 
 function Projects() {
-  const [ref, isVisible] = useScrollAnimation()
-  
   return (
-    <section 
-      ref={ref}
-      className={`py-16 md:py-24 relative z-10 bg-white transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
+    <section className="py-16 md:py-24 relative z-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
@@ -27,6 +18,7 @@ function Projects() {
         
         {/* Grid layout - Masonry style */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-16">
+          
           {/* Linker kolom */}
           <div className="flex flex-col gap-3 md:gap-6">
             <div className="relative overflow-hidden rounded-sm h-[200px] md:h-[400px] group cursor-pointer shadow-md">
@@ -90,7 +82,7 @@ function Projects() {
           </div>
         </div>
         
-        {/* Navy Blue Balk (CTA Section) - NU MET RONDE HOEKEN (rounded-3xl) */}
+        {/* Navy Blue Balk (CTA Section) */}
         <div className="bg-primary rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
            {/* Decoratieve gloed */}
            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -104,7 +96,7 @@ function Projects() {
             </p>
           </div>
 
-          {/* KNOP - NU MET RONDE HOEKEN (rounded-full) */}
+          {/* KNOP */}
           <Link 
             href="/contact"
             className="relative z-10 bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap tracking-wide"

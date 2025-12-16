@@ -1,9 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import { useScrollAnimation } from '../app/hooks/useScrollAnimation'
 
 export default function Reviews() {
-  const [ref, isVisible] = useScrollAnimation()
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollRef = useRef(null)
 
@@ -99,13 +97,9 @@ export default function Reviews() {
   }, [currentIndex, reviews.length])
 
   return (
-    <section 
-      ref={ref}
-      // Achtergrond transparant (geen bg-gray-50)
-      className={`py-16 md:py-24 relative z-10 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
+  <section
+    className="py-12 md:py-24 relative z-10" // Gewoon alleen de className
+  >
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header (met wit glas effect voor leesbaarheid) */}

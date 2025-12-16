@@ -1,17 +1,10 @@
-import { Inter, Special_Elite } from "next/font/google";
+import { Inter } from "next/font/google"; // Special_Elite is weggehaald
 import "./globals.css";
 
-// 1. Standaard lettertype (voor leestekst)
+// Standaard lettertype (Inter) - Strak en modern
 const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-inter',
-});
-
-// 2. Speciaal lettertype (voor koppen/cijfers) - Nautische/Industriële look
-const special = Special_Elite({ 
-  weight: '400',
-  subsets: ["latin"],
-  variable: '--font-special',
 });
 
 export const metadata = {
@@ -36,7 +29,7 @@ export const metadata = {
     'bootkap reparatie'
   ],
   
-  // 3. FAVICON TOEVOEGING (Zorg dat logo.png in je 'public' map staat)
+  // FAVICON
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
@@ -52,7 +45,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/hero-bg.jpg', // Zorg dat deze bestaat in public map
+        url: '/hero-bg.jpg', 
         width: 1200,
         height: 630,
         alt: 'Zeilmakerij Liva Vakmanschap',
@@ -62,7 +55,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // 4. Structured Data (JSON-LD) voor Google
+  // Structured Data (JSON-LD) voor Google
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -104,8 +97,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="nl" className="scroll-smooth">
-      {/* Fonts en basis styling */}
-      <body className={`${inter.variable} ${special.variable} font-sans antialiased relative text-gray-900 bg-white`}>
+      {/* Alleen 'inter.variable' wordt hier geladen. 'special.variable' is weg. */}
+      <body className={`${inter.variable} font-sans antialiased relative text-gray-900 bg-white`}>
         
         {/* JSON-LD Script injecteren */}
         <script
@@ -113,7 +106,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Subtiele achtergrond ruis (Noise) voor premium gevoel */}
+        {/* ACHTERGROND:
+            Ik heb de 'Noise' (ruis) hieronder laten staan omdat dit vaak wel mooi en subtiel is.
+            Als je echt 100% strak wit wilt, kun je de onderstaande <div> verwijderen.
+        */}
         <div className="fixed inset-0 opacity-[0.03] -z-10 pointer-events-none" 
              style={{ 
                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,

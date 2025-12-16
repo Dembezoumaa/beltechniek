@@ -9,14 +9,14 @@ export default {
       colors: {
         // Jouw Zeilmakerij Liva palet
         primary: {
-          DEFAULT: '#0F4F67', // Navy Blue (Wordt gebruikt bij bg-primary / text-primary)
+          DEFAULT: '#0F4F67', // Navy Blue
           dark: '#092E42',    // Deep Navy
           foreground: '#FFFFFF', 
         },
         secondary: '#4A8CA2', // Ocean Blue
         accent: '#A28A77',    // Timber Accent
         
-        // Tekstkleuren (optioneel, als je ze gebruikt)
+        // Tekstkleuren
         text: {
           main: '#3C3033',    
           muted: '#676369',   
@@ -25,13 +25,14 @@ export default {
         
         border: '#DDECF9',
       },
-      // HIER ZIT DE BELANGRIJKSTE WIJZIGING:
       fontFamily: {
-        // We koppelen de variabele uit layout.js aan de class 'font-sans'
+        // Standaard tekst
         sans: ['var(--font-inter)', 'sans-serif'], 
         
-        // We koppelen de variabele uit layout.js aan de class 'font-special'
-        special: ['var(--font-special)', 'sans-serif'],
+        // HIER IS DE AANPASSING:
+        // We laten 'font-special' nu OOK naar 'Inter' wijzen.
+        // Zo blijven je pagina's werken, maar ziet het er weer strak uit.
+        special: ['var(--font-inter)', 'sans-serif'],
       },
     },
   },

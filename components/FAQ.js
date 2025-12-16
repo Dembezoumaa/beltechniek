@@ -1,9 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { useScrollAnimation } from '../app/hooks/useScrollAnimation'
 
 function FAQ() {
-  const [ref, isVisible] = useScrollAnimation()
   const [openIndex, setOpenIndex] = useState(null)
 
   const faqs = [
@@ -34,13 +32,9 @@ function FAQ() {
   }
 
   return (
-    <section 
-      ref={ref}
-      // Relatief positioneren zodat het mooi over de achtergrondfoto valt
-      className={`relative py-16 md:py-24 z-10 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
+  <section
+    className="py-12 md:py-24 relative z-10" // Gewoon alleen de className
+  >
       <div className="max-w-3xl mx-auto px-6">
         
         {/* Header Blok - Wit met lichte transparantie en blur voor luxe uitstraling */}

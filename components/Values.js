@@ -1,8 +1,6 @@
 'use client'
-import { useScrollAnimation } from '../app/hooks/useScrollAnimation'
 
 function Values() {
-  const [ref, isVisible] = useScrollAnimation()
   
   const values = [
     {
@@ -38,15 +36,11 @@ function Values() {
     }
   ]
 
-  return (
-    <section 
-      ref={ref}
-      // AANPASSING: bg-white verwijderd (is nu transparant). 
-      // Zorg dat deze sectie over je achtergrondafbeelding ligt.
-      className={`py-12 md:py-24 relative z-10 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-    >
+ 
+    return (
+  <section
+    className="py-12 md:py-24 relative z-10" // Gewoon alleen de className
+  >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Titel Sectie */}
         {/* AANPASSING: Achtergrondje achter de tekst toegevoegd voor leesbaarheid op foto */}
