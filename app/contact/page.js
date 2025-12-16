@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { useScrollAnimation } from '../hooks/useScrollAnimation' // Pas pad aan indien nodig
+import { useScrollAnimation } from '../hooks/useScrollAnimation' // Check of dit pad klopt
+// AANGEPAST: Relatief pad (..) om bij PageHeader te komen
 import PageHeader from '../PageHeader'
 import Footer from '@/components/Footer'
 
@@ -9,21 +10,19 @@ export default function Contact() {
   const [infoRef, infoVisible] = useScrollAnimation()
   
   const [formData, setFormData] = useState({
-    bedrijfsnaam: '',
     naam: '',
     achternaam: '',
     email: '',
     adres: '',
     woonplaats: '',
     telefoon: '',
-    soortDienst: '',
     bericht: ''
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Hier later je API call toevoegen
-    alert('Formulier verzonden! (Nog geen backend)')
+    // Hier later je API call toevoegen (bijv. Formspree of eigen backend)
+    alert('Bedankt voor uw bericht! We nemen zo snel mogelijk contact op.')
     console.log(formData)
   }
 
@@ -35,10 +34,10 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <PageHeader 
         title="Neem contact met ons op" 
-        description="Wij helpen u graag verder"
+        description="Wij helpen u graag verder met advies op maat"
       />
 
       <section className="py-16">
@@ -52,29 +51,13 @@ export default function Contact() {
                 formVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Stuur ons een bericht</h3>
+              <h3 className="text-2xl font-bold font-special text-primary mb-6">Stuur ons een bericht</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 
-                {/* Bedrijfsnaam - Nu Verplicht */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Bedrijfsnaam *
-                  </label>
-                  <input
-                    type="text"
-                    name="bedrijfsnaam"
-                    placeholder="Uw bedrijfsnaam"
-                    required
-                    value={formData.bedrijfsnaam}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
-                  />
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-bold text-gray-700 mb-1">
                       Naam *
                     </label>
                     <input
@@ -83,26 +66,28 @@ export default function Contact() {
                       required
                       value={formData.naam}
                       onChange={handleChange}
-                      className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
+                      className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                      placeholder="Voornaam"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                    <label className="block text-sm font-bold text-gray-700 mb-1">
                       Achternaam *
                     </label>
                     <input
                       type="text"
                       name="achternaam"
-                      required // Nu verplicht
+                      required 
                       value={formData.achternaam}
                       onChange={handleChange}
-                      className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
+                      className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                      placeholder="Achternaam"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-bold text-gray-700 mb-1">
                     Email *
                   </label>
                   <input
@@ -111,38 +96,43 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
+                    className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                    placeholder="uw@email.nl"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Adres
-                  </label>
-                  <input
-                    type="text"
-                    name="adres"
-                    value={formData.adres}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">
+                        Adres
+                      </label>
+                      <input
+                        type="text"
+                        name="adres"
+                        value={formData.adres}
+                        onChange={handleChange}
+                        className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                        placeholder="Straat en huisnummer"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-1">
+                        Woonplaats
+                      </label>
+                      <input
+                        type="text"
+                        name="woonplaats"
+                        value={formData.woonplaats}
+                        onChange={handleChange}
+                        className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                        placeholder="Plaats"
+                      />
+                    </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Woonplaats
-                  </label>
-                  <input
-                    type="text"
-                    name="woonplaats"
-                    value={formData.woonplaats}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                  <label className="block text-sm font-bold text-gray-700 mb-1">
                     Telefoon *
                   </label>
                   <input
@@ -151,51 +141,30 @@ export default function Contact() {
                     required
                     value={formData.telefoon}
                     onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 transition text-gray-900"
+                    className="w-full border-b-2 border-gray-200 focus:border-accent outline-none py-2 transition text-gray-900 bg-transparent placeholder-gray-400"
+                    placeholder="06 12345678"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Soort dienst
-                  </label>
-                  <select
-                    name="soortDienst"
-                    value={formData.soortDienst}
-                    onChange={handleChange}
-                    className="w-full border-b-2 border-gray-300 focus:border-[#40B9FF] outline-none py-2 bg-white transition text-gray-900"
-                  >
-                    <option value="">Selecteer een optie</option>
-                    <option value="kantoor">Kantoorschoonmaak</option>
-                    <option value="horeca">Horecaschoonmaak</option>
-                    <option value="oplevering">Opleveringsschoonmaak</option>
-                    <option value="glas">Glasbewassing</option>
-                    <option value="periodiek">Periodieke schoonmaak</option>
-                    <option value="diepte">Dieptereiniging</option>
-                    <option value="anders">Anders</option>
-                  </select>
-                </div>
-
-                {/* Reden van contact is VERWIJDERD zoals gevraagd */}
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Schrijf een bericht
+                  <label className="block text-sm font-bold text-gray-700 mb-1">
+                    Uw vraag of opmerking
                   </label>
                   <textarea
                     name="bericht"
                     rows="4"
                     value={formData.bericht}
                     onChange={handleChange}
-                    className="w-full border-2 border-gray-300 focus:border-[#40B9FF] outline-none p-3 rounded-lg transition resize-none text-gray-900"
+                    className="w-full border-2 border-gray-200 focus:border-accent outline-none p-3 rounded-sm transition resize-none text-gray-900 bg-transparent placeholder-gray-400"
+                    placeholder="Waar kunnen we u mee helpen?"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#40B9FF] hover:bg-[#3AA8E8] text-white font-semibold py-3 px-8 rounded-full transition shadow-md"
+                  className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 px-8 rounded-full transition shadow-lg transform hover:-translate-y-1 duration-200"
                 >
-                  Verzenden
+                  VERZENDEN
                 </button>
               </form>
             </div>
@@ -207,42 +176,49 @@ export default function Contact() {
                 infoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-6">
+              <div className="bg-gray-50 rounded-sm p-8 border border-gray-100 shadow-md">
+                <h3 className="text-xl font-bold font-special text-primary mb-6">
                   Bedrijfsgegevens
                 </h3>
                 
-                <div className="space-y-4 text-gray-700">
+                <div className="space-y-5 text-gray-700">
                   <div>
-                    <p className="font-semibold text-gray-800 mb-1">KVK-nummer:</p>
-                    <p>90215729</p>
+                    <p className="font-bold text-primary mb-1 uppercase text-xs tracking-wider">Bedrijf</p>
+                    <p className="text-lg font-special">Zeilmakerij Liva</p>
                   </div>
 
                   <div>
-                    <p className="font-semibold text-gray-800 mb-1">Adres:</p>
-                    <p>Groene Steen 18</p>
-                    <p>1628 WN Hoorn</p>
+                    <p className="font-bold text-primary mb-1 uppercase text-xs tracking-wider">KVK-nummer</p>
+                    <p>[78366380]</p>
+                  </div>
+
+                  <div>
+                    <p className="font-bold text-primary mb-1 uppercase text-xs tracking-wider">Bezoekadres</p>
+                    <p>Horndijk 24</p>
+                    <p>1231NK Loosdrecht</p>
+                    
                   </div>
                   
                   <div>
-                    <p className="font-semibold text-gray-800 mb-1">Tel:</p>
-                    <a href="tel:+31640127061" className="text-[#40B9FF] hover:underline">
-                      +31 6 40 12 70 61
-                    </a>
-                  </div>
-
-                  <div>
-                    <p className="font-semibold text-gray-800 mb-1">E-mail:</p>
-                    <a href="mailto:info@dienstexpert.nl" className="text-[#40B9FF] hover:underline">
-                      info@dienstexpert.nl
-                    </a>
+                    <p className="font-bold text-primary mb-1 uppercase text-xs tracking-wider">Contact</p>
+                    <p>
+                        <a href="tel:0356228460" className="text-accent hover:underline font-medium">
+                        035 622 8460
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@zeilmakerijliva.nl" className="text-accent hover:underline font-medium">
+                        info@zeilmakerijliva.nl
+                        </a>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-2xl overflow-hidden h-80 shadow-lg">
+              <div className="rounded-sm overflow-hidden h-80 shadow-lg border border-gray-200">
+                {/* Google Maps Embed - Loosdrecht */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2418.6568173459286!2d5.0588433!3d52.6439722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609a130e0596b%3A0x6506060606060606!2sGroene%20Steen%2018%2C%201628%20WN%20Hoorn!5e0!3m2!1snl!2snl!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.712965317284!2d5.065483076059344!3d52.21226345896867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66d77a4e2a685%3A0x8cea5ecc4186b845!2sHorndijk%2024%2C%201231%20NX%20Loosdrecht!5e0!3m2!1sen!2snl!4v1765922644344!5m2!1sen!2snl"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
