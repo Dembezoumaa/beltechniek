@@ -7,31 +7,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Jouw nieuwe palet
+        // Jouw Zeilmakerij Liva palet
         primary: {
-          DEFAULT: '#0F4F67', // Navy Blue
-          dark: '#092E42',    // Deep Navy (Donkere variant)
-          foreground: '#FFFFFF', // Wit (voor tekst op buttons)
+          DEFAULT: '#0F4F67', // Navy Blue (Wordt gebruikt bij bg-primary / text-primary)
+          dark: '#092E42',    // Deep Navy
+          foreground: '#FFFFFF', 
         },
         secondary: '#4A8CA2', // Ocean Blue
         accent: '#A28A77',    // Timber Accent
         
-        // Tekstkleuren
+        // Tekstkleuren (optioneel, als je ze gebruikt)
         text: {
-          main: '#3C3033',    // Primary text
-          muted: '#676369',   // Secondary text
-          light: '#A1AAB8',   // Light gray
+          main: '#3C3033',    
+          muted: '#676369',   
+          light: '#A1AAB8',   
         },
         
-        // Randen
         border: '#DDECF9',
       },
+      // HIER ZIT DE BELANGRIJKSTE WIJZIGING:
       fontFamily: {
-        // Hiermee kun je 'font-special' gebruiken in je classes
-        special: ['"Special Gothic"', 'sans-serif'],
-        'special-condensed': ['"Special Gothic Condensed"', 'sans-serif'],
-        'special-expanded': ['"Special Gothic Expanded"', 'sans-serif'],
-        sans: ['Arial', 'Helvetica', 'sans-serif'], // Default fallback
+        // We koppelen de variabele uit layout.js aan de class 'font-sans'
+        sans: ['var(--font-inter)', 'sans-serif'], 
+        
+        // We koppelen de variabele uit layout.js aan de class 'font-special'
+        special: ['var(--font-special)', 'sans-serif'],
       },
     },
   },

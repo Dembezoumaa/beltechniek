@@ -1,18 +1,30 @@
-import { Inter } from "next/font/google";
+import { Inter, Special_Elite } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from './components/WhatsAppButton'
 
-const inter = Inter({ subsets: ["latin"] });
+// 1. Standaard lettertype (voor leestekst)
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter',
+});
+
+// 2. Speciaal lettertype (voor koppen/cijfers) - Nautische/Industriële look
+const special = Special_Elite({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-special',
+});
 
 export const metadata = {
-  // 1. SEO: Een betere titel template
+  // Belangrijk voor images in productie:
+  metadataBase: new URL('https://www.zeilmakerijliva.nl'), 
+
   title: {
     default: 'Zeilmakerij Liva | Maatwerk Bootkappen & Stoffering Loosdrecht',
     template: '%s | Zeilmakerij Liva'
   },
-  // 2. SEO: Omschrijving
-  description: "Zeilmakerij Liva is uw specialist voor maatwerk bootkappen, biminitops, afdekzeilen en jachtstoffering in Loosdrecht. Premium materialen, ambachtelijk vervaardigd. Vraag vrijblijvend een offerte aan.",
-  keywords: ['zeilmakerij Loosdrecht', 
+  description: "Zeilmakerij Liva is uw specialist voor maatwerk bootkappen, biminitops, afdekzeilen en jachtstoffering in Loosdrecht. Premium materialen, ambachtelijk vervaardigd.",
+  keywords: [
+    'zeilmakerij Loosdrecht', 
     'buiskap op maat', 
     'bootkappen', 
     'biminitop', 
@@ -21,9 +33,16 @@ export const metadata = {
     'bootkussens bekleden', 
     'zeilmakerij het Gooi',
     'dekzeil boot',
-    'bootkap reparatie'],
+    'bootkap reparatie'
+  ],
   
-   // 3. Social Media
+  // 3. FAVICON TOEVOEGING (Zorg dat logo.png in je 'public' map staat)
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
+
   openGraph: {
     title: 'Zeilmakerij Liva | Maatwerk Bootkappen & Stoffering',
     description: 'Ambachtelijk zeildoekwerk en stoffering voor uw boot. 100% maatwerk, premium materialen. Gevestigd in Loosdrecht.',
@@ -31,93 +50,41 @@ export const metadata = {
     siteName: 'Zeilmakerij Liva',
     locale: 'nl_NL',
     type: 'website',
+    images: [
+      {
+        url: '/hero-bg.jpg', // Zorg dat deze bestaat in public map
+        width: 1200,
+        height: 630,
+        alt: 'Zeilmakerij Liva Vakmanschap',
+      },
+    ],
   },
 };
 
 export default function RootLayout({ children }) {
-  // 4. Structured Data (Voor Google)
+  // 4. Structured Data (JSON-LD) voor Google
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness', // Lokaal bedrijf voor zeilmakerij
+    '@type': 'LocalBusiness',
     name: 'Zeilmakerij Liva',
-    image: 'https://www.zeilmakerijliva.nl/logo.png', // Zorg dat deze afbeelding bestaat
-    description: 'Ambachtelijke zeilmakerij gespecialiseerd in maatwerk bootkappen, biminitops, afdekzeilen en jachtstoffering in Loosdrecht. Premium materialen en vakmanschap voor uw boot.',
+    image: 'https://www.zeilmakerijliva.nl/logo.png',
+    description: 'Ambachtelijke zeilmakerij gespecialiseerd in maatwerk bootkappen en stoffering.',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Horndijk 24a',
+      streetAddress: 'Horndijk 24',
       addressLocality: 'Loosdrecht',
       postalCode: '1231 NK',
       addressCountry: 'NL'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 52.2044,  // Coördinaten Loosdrecht (pas aan naar exacte locatie indien nodig)
+      latitude: 52.2044,
       longitude: 5.1311
     },
     telephone: '035 622 8460',
     email: 'info@zeilmakerijliva.nl',
     url: 'https://www.zeilmakerijliva.nl',
-    priceRange: '$$$', // Hogere prijsklasse vanwege maatwerk
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Loosdrecht'
-      },
-      {
-        '@type': 'City',
-        name: 'Hilversum'
-      },
-      {
-        '@type': 'City',
-        name: 'Het Gooi'
-      }
-    ],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Zeilmakerij Diensten',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Buiskappen & Achtertenten',
-            description: 'Maatwerk bootkappen op maat voor optimale bescherming'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Biminitops',
-            description: 'Zonnekappen voor comfort op het water'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Afdekzeilen',
-            description: 'Waterdichte afdekzeilen voor sloepen, zeilboten en motorboten'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Jachtstoffering',
-            description: 'Bootkussens en interieurstoffering op maat'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Reparatie & Onderhoud',
-            description: 'Vakkundige reparatie van zeildoekwerk, ritsen en naden'
-          }
-        }
-      ]
-    },
+    priceRange: '$$$',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -135,31 +102,26 @@ export default function RootLayout({ children }) {
     ]
   }
 
-
   return (
     <html lang="nl" className="scroll-smooth">
-      <body className={`${inter.className} antialiased relative text-gray-900`}>
+      {/* Fonts en basis styling */}
+      <body className={`${inter.variable} ${special.variable} font-sans antialiased relative text-gray-900 bg-white`}>
         
-        {/* HIER WORDT DE DATA INGEVOEGD VOOR GOOGLE */}
+        {/* JSON-LD Script injecteren */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-
-        {/* JOUW BESTAANDE ACHTERGROND (BEHOUDEN) */}
-        <div className="fixed inset-0 opacity-5 -z-10 pointer-events-none" 
+        {/* Subtiele achtergrond ruis (Noise) voor premium gevoel */}
+        <div className="fixed inset-0 opacity-[0.03] -z-10 pointer-events-none" 
              style={{ 
-               backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, #1e40af 35px, #1e40af 36px)`,
-               backgroundSize: '50px 50px'
+               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
              }}>
         </div>
 
-
         {children}
         
-        {/* JOUW WHATSAPP KNOP (BEHOUDEN) */}
-        <WhatsAppButton />
       </body>
     </html>
   );
