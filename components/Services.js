@@ -3,74 +3,71 @@ import Link from 'next/link'
 
 function Services() {
 
-  
-  // Ik heb de iconen uit de data verwijderd. We gebruiken nu de index voor de nummers.
   const services = [
     {
-      focus: "Bescherming",
-      title: "Dekzeilen",
-      description: "Houdt het dek droog en voorkomt schade in de haven of winterstalling."
+      focus: "Krachtstroom",
+      title: "Elektrotechniek",
+      description: "Ontwerp en installatie van complete elektrische installaties voor utiliteit en industrie."
     },
     {
-      focus: "Privacy",
-      title: "Railingkleden",
-      description: "Extra beschutting tegen wind, spatten en laagstaande zon."
+      focus: "Beveiliging",
+      title: "Inbraaksystemen",
+      description: "Gecertificeerde beveiligingsoplossingen om uw bedrijfspand en activa 24/7 te beschermen."
     },
     {
-      focus: "Verkoeling",
-      title: "Biminitops",
-      description: "Schaduw op warme dagen. Eenvoudig op te zetten en kleurvast."
+      focus: "24/7 Uptime",
+      title: "Industriële Storingsdienst",
+      description: "Directe hulp bij technische calamiteiten om stilstand van uw productieproces te minimaliseren."
     },
     {
-      focus: "Strak",
-      title: "Bootkappen",
-      description: "Sluit de kuip netjes af. Volgt precies de lijnen van uw boot."
+      focus: "Procescontrole",
+      title: "Meet- & Regeltechniek",
+      description: "Optimalisatie en automatisering van systemen voor nauwkeurige monitoring en besturing."
     },
     {
-      focus: "Comfort",
-      title: "Stoelen & Kussens",
-      description: "Bestand tegen zon, vocht en zout water. Zorgeloos zitten en liggen."
+      focus: "Installatie",
+      title: "Elektrisch Werk",
+      description: "Van groepenkasten tot complexe bekabeling; wij verzorgen het volledige elektrische traject."
     },
     {
-      focus: "Zeilbehoud",
-      title: "Giekkleden",
-      description: "Voorkomt verwering en slijtage van het grootzeil wanneer u niet vaart."
+      focus: "Revisie",
+      title: "Mechanisch Werk",
+      description: "Onderhoud en reparatie van mechanische componenten binnen uw machinepark of installatie."
     },
     {
-      focus: "Flexibel",
-      title: "Cabrioletkappen",
-      description: "Beschutte ruimte in één beweging. Eenvoudig openritsen op mooie dagen."
+      focus: "Maatwerk",
+      title: "Paneelbouw",
+      description: "Assemblage van besturingskasten en verdeelinrichtingen, volledig gebouwd volgens uw specificaties."
     },
     {
-      focus: "Zicht",
-      title: "Buiskappen",
-      description: "Beschutting tegen buiswater met behoud van goed zicht."
+      focus: "Totaaloplossing",
+      title: "Allround Techniek",
+      description: "Brede technische ondersteuning en multidisciplinaire projecten voor de zakelijke markt."
     }
   ]
 
   return (
-  <section
-    className="py-12 md:py-24 relative z-10" // Gewoon alleen de className
-  >
+  <section className="py-12 md:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         
-        {/* Header Blok (Wit Glas) */}
+        {/* Header Blok (Industrieel Wit Glas) */}
         <div className="bg-white/95 backdrop-blur-md rounded-xl p-6 md:p-10 text-center mb-12 shadow-lg max-w-4xl mx-auto border border-white/50">
           <p className="text-sm text-accent font-bold uppercase tracking-widest mb-3">
-            Zeilmakerij Liva
+            Onze Expertise
           </p>
-          <h2 className="text-3xl md:text-5xl font-special text-primary mb-4">
-            Wat wij voor u maken
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
+            Technische Diensten
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed text-sm md:text-lg font-medium">
-            Zeilmakerij Liva vervaardigt alles op maat. Van beschermende kappen tot comfortabele stoffering, wij leveren vakmanschap dat past bij uw boot en uw wensen. Elk product wordt handmatig ingemeten en in ons atelier in Loosdrecht geproduceerd.
+            Beltechniek B.V. levert hoogwaardige technische oplossingen voor de industrie en B2B-sector. 
+            Van preventief onderhoud tot complexe systeemintegratie; wij waarborgen de continuïteit 
+            van uw bedrijfsvoering met gecertificeerd vakmanschap en landelijke dekking.
           </p>
         </div>
 
-        {/* Services Grid (8 items) - Zonder Iconen */}
+        {/* Services Grid (8 items) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-white/30 rounded-lg overflow-hidden shadow-2xl bg-white/90 backdrop-blur-md">
           {services.map((service, index) => {
-            // Maak een mooi nummer, bijv: "01", "02"
             const number = (index + 1).toString().padStart(2, '0');
 
             return (
@@ -90,18 +87,18 @@ function Services() {
                   md:border-b ${index < services.length - 4 ? 'md:border-b' : 'md:border-b-0'}
                 `}
               >
-                {/* Focus label (klein bovenin) */}
-                <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-3">
+                {/* Focus label */}
+                <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-3 group-hover:text-accent transition-colors">
                   {service.focus}
                 </span>
 
-                {/* HET NUMMER (Vervanging van icoon) */}
-                <div className="mb-2 font-special text-3xl md:text-4xl text-accent/80 group-hover:text-accent transition-colors duration-300 group-hover:scale-110 transform">
+                {/* HET NUMMER */}
+                <div className="mb-2 font-bold text-3xl md:text-4xl text-accent/80 group-hover:text-accent transition-colors duration-300 group-hover:scale-110 transform">
                   {number}
                 </div>
                 
                 {/* Titel */}
-                <h3 className="text-sm md:text-lg font-bold font-special text-primary mb-2">
+                <h3 className="text-sm md:text-lg font-bold text-primary mb-2">
                   {service.title}
                 </h3>
                 
@@ -117,10 +114,10 @@ function Services() {
         {/* CTA Button */}
         <div className="text-center mt-12">
           <Link 
-            href="/diensten"
-            className="inline-block bg-accent hover:bg-accent/90 text-white font-bold px-8 py-3 md:px-10 md:py-4 rounded-sm transition shadow-lg hover:shadow-xl hover:-translate-y-1 tracking-wide text-sm md:text-base"
+            href="/contact"
+            className="inline-block bg-accent hover:bg-primary text-white font-bold px-8 py-3 md:px-10 md:py-4 rounded-sm transition all shadow-lg hover:shadow-xl hover:-translate-y-1 tracking-wide text-sm md:text-base uppercase"
           >
-            BEKIJK AL ONZE DIENSTEN →
+            Vraag een technische audit aan →
           </Link>
         </div>
       </div>

@@ -1,5 +1,4 @@
 'use client'
-// Zorg dat het pad naar PageHeader klopt (één mapje omhoog met ..)
 import PageHeader from '../PageHeader'
 import Footer from '@/components/Footer'
 
@@ -8,198 +7,174 @@ export default function Privacy() {
     <div className="min-h-screen bg-white">
       <PageHeader 
         title="Privacy Policy" 
-        description="Hoe wij omgaan met uw persoonsgegevens"
+        description="Transparantie over de verwerking van uw zakelijke gegevens"
       />
 
-      <section className="py-16">
+      <section className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           
           <div className="prose prose-lg max-w-none text-gray-600">
             
             {/* Intro */}
-            <div className="mb-10">
-              <p className="leading-relaxed">
-                Zeilmakerij Liva hecht veel waarde aan de bescherming van uw persoonsgegevens. 
-                In deze Privacy Policy leggen wij uit welke persoonsgegevens wij verzamelen en gebruiken en met 
-                welk doel. Wij raden u aan deze Privacy Policy zorgvuldig te lezen.
+            <div className="mb-16 border-b border-gray-100 pb-10">
+              <p className="leading-relaxed text-xl font-medium text-primary/80">
+                Beltechniek B.V. hecht grote waarde aan de privacy van haar opdrachtgevers en websitebezoekers. 
+                In dit document leggen wij uit hoe wij omgaan met persoonsgegevens binnen onze industriële dienstverlening.
               </p>
-              <p className="text-sm text-gray-400 mt-4 italic">
-                <strong>Laatst gewijzigd:</strong> {new Date().toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
+              <p className="text-xs font-black uppercase tracking-widest text-accent mt-6">
+                Laatst gewijzigd: {new Date().toLocaleDateString('nl-NL', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
             </div>
 
             {/* 1. Wie zijn wij */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">1. Wie zijn wij?</h2>
-              <p className="leading-relaxed mb-4">
-                Zeilmakerij Liva is verantwoordelijk voor de verwerking van persoonsgegevens 
-                zoals weergegeven in deze Privacy Policy.
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">1. Wie zijn wij?</h2>
+              <p className="leading-relaxed mb-6">
+                Beltechniek B.V. is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze verklaring.
               </p>
-              <div className="bg-gray-50 rounded-sm p-6 border border-gray-100">
-                <p className="text-primary mb-2 font-bold uppercase text-sm tracking-wider">Contactgegevens:</p>
-                <div className="text-gray-600 space-y-1">
-                  <p>Zeilmakerij Liva</p>
-                  <p>Oud-Loosdrechtsedijk</p>
-                  <p>1231 AB Loosdrecht</p>
-                  <p>KVK: [Uw KVK Nummer]</p>
-                  <p>Email: <a href="mailto:info@zeilmakerijliva.nl" className="text-accent hover:underline">info@zeilmakerijliva.nl</a></p>
-                  <p>Telefoon: <a href="tel:+31600000000" className="text-accent hover:underline">+31 6 00 00 00 00</a></p>
+              <div className="bg-primary p-8 rounded-sm text-white shadow-xl">
+                <p className="text-accent mb-4 font-black uppercase text-[10px] tracking-[0.3em]">Contactgegevens:</p>
+                <div className="text-white/80 space-y-1 font-medium">
+                  <p className="text-white font-bold uppercase tracking-tight">Beltechniek B.V.</p>
+                  <p>Industrieweg 12</p>
+                  <p>1234 AB, Nederland</p>
+                  <p>KVK: 12345678</p>
+                  <p className="pt-4">
+                    Email: <a href="mailto:info@beltechniek.nl" className="text-accent hover:text-white transition-colors">info@beltechniek.nl</a>
+                  </p>
+                  <p>
+                    Telefoon: <a href="tel:+31614987347" className="text-accent hover:text-white transition-colors">+31 6 14987347</a>
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* 2. Welke gegevens */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">2. Welke persoonsgegevens verzamelen wij?</h2>
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">2. Welke persoonsgegevens verzamelen wij?</h2>
               <p className="leading-relaxed mb-4">
-                Zeilmakerij Liva kan de volgende persoonsgegevens van u verwerken:
+                Beltechniek B.V. verwerkt uw persoonsgegevens omdat u gebruikmaakt van onze diensten en/of omdat u deze gegevens zelf aan ons verstrekt:
               </p>
-              <ul className="list-disc pl-6 space-y-2 marker:text-accent">
-                <li>Voor- en achternaam</li>
-                <li>Bedrijfsnaam (indien van toepassing)</li>
-                <li>Adresgegevens (voor inmeten en facturatie)</li>
-                <li>Telefoonnummer</li>
-                <li>E-mailadres</li>
-                <li>Gegevens over uw vaartuig (tbv de opdracht)</li>
-                <li>Gegevens die u zelf verstrekt via contactformulieren of email</li>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+                {[
+                  'Voor- en achternaam',
+                  'Bedrijfsnaam en afdeling',
+                  'Adresgegevens (locatie van installaties)',
+                  'Telefoonnummer (direct/zakelijk)',
+                  'E-mailadres',
+                  'Technische specificaties van uw machinepark',
+                  'Gegevens over uw activiteiten op onze website'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 bg-gray-50 p-3 rounded-sm border border-gray-100 text-sm font-bold">
+                    <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* 3. Waarvoor */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">3. Waarvoor gebruiken wij uw gegevens?</h2>
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">3. Doeleinden van verwerking</h2>
               <p className="leading-relaxed mb-4">
-                Zeilmakerij Liva verwerkt uw persoonsgegevens voor de volgende doeleinden:
+                Wij verwerken uw gegevens voor de volgende zakelijke doeleinden:
               </p>
-              <ul className="list-disc pl-6 space-y-2 marker:text-accent">
-                <li>Het afhandelen van uw offerte-aanvragen en vragen</li>
-                <li>Het maken van afspraken voor inmeten op locatie</li>
-                <li>Het versturen van offertes en facturen</li>
-                <li>Het leveren van onze diensten en producten</li>
-                <li>Contact met u opnemen indien dit nodig is voor de uitvoering van onze dienstverlening</li>
-                <li>Het nakomen van wettelijke verplichtingen (zoals belastingaangifte)</li>
+              <ul className="space-y-3 list-none p-0">
+                {[
+                  'Het plannen van storingsbezoeken en onderhoud',
+                  'Het uitbrengen van technische offertes en calculaties',
+                  'Het factureren van verrichte werkzaamheden en materialen',
+                  'Het leveren van support op afstand (PLC/Software)',
+                  'Wettelijke verplichtingen (administratie en belastingen)',
+                  'Optimalisatie van onze dienstverlening'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4 text-gray-600 border-l-2 border-accent/20 pl-4 py-1">
+                    <span className="font-black text-accent">{i + 1}.</span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* 4. Bewaartermijn */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">4. Hoe lang bewaren wij uw gegevens?</h2>
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">4. Bewaartermijnen</h2>
               <p className="leading-relaxed">
-                Zeilmakerij Liva bewaart uw persoonsgegevens niet langer dan noodzakelijk voor het doel waarvoor 
-                deze zijn verstrekt dan wel op grond van de wet is vereist. Wij hanteren de volgende bewaartermijnen:
+                Beltechniek B.V. bewaart uw persoonsgegevens niet langer dan strikt nodig is. Wij hanteren de volgende termijnen:
               </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 marker:text-accent">
-                <li>Contactgegevens van klanten: maximaal 7 jaar na laatste contact (tbv eventuele nazorg/garantie)</li>
-                <li>Facturen en administratie: 7 jaar (wettelijke verplichting Belastingdienst)</li>
-                <li>Offertes: 2 jaar na versturen</li>
-              </ul>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8 text-center">
+                <div className="bg-gray-50 p-6 border-b-4 border-primary">
+                  <p className="text-primary font-black text-2xl mb-1">7 Jaar</p>
+                  <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Administratie</p>
+                </div>
+                <div className="bg-gray-50 p-6 border-b-4 border-primary">
+                  <p className="text-primary font-black text-2xl mb-1">2 Jaar</p>
+                  <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Offertes</p>
+                </div>
+                <div className="bg-gray-50 p-6 border-b-4 border-primary">
+                  <p className="text-primary font-black text-2xl mb-1">Duur Project</p>
+                  <p className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Technische Data</p>
+                </div>
+              </div>
             </div>
 
             {/* 5. Delen met derden */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">5. Delen wij uw gegevens met derden?</h2>
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">5. Delen met derden</h2>
               <p className="leading-relaxed">
-                Zeilmakerij Liva verkoopt uw gegevens niet aan derden en verstrekt deze alleen indien dit nodig is 
-                voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting. 
-                Wij kunnen uw gegevens delen met:
+                Wij verkopen uw gegevens nooit. Wij delen gegevens uitsluitend met derden als dit noodzakelijk is voor de uitvoering van onze overeenkomst (bijv. toeleveranciers van componenten of gespecialiseerde onderaannemers) of om te voldoen aan een wettelijke verplichting.
               </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 marker:text-accent">
-                <li>Onze boekhouder voor administratieve verwerking</li>
-                <li>Overheidsinstanties indien wij hier wettelijk toe verplicht zijn</li>
-              </ul>
             </div>
 
             {/* 6. Beveiliging */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">6. Hoe beveiligen wij uw gegevens?</h2>
-              <p className="leading-relaxed">
-                Zeilmakerij Liva neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om 
-                misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging 
-                tegen te gaan. Wij maken gebruik van:
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">6. Beveiliging</h2>
+              <p className="leading-relaxed mb-6">
+                Beltechniek B.V. neemt de bescherming van uw gegevens serieus. Wij maken gebruik van SSL-encryptie op onze website, beveiligde servers voor onze ERP-systemen en strikte toegangscontrole voor onze medewerkers.
               </p>
-              <ul className="list-disc pl-6 space-y-2 mt-4 marker:text-accent">
-                <li>Beveiligde verbindingen (SSL/HTTPS) op onze website</li>
-                <li>Beveiligde opslag van klantgegevens</li>
-                <li>Beperkte toegang tot persoonsgegevens alleen voor bevoegde personen</li>
-              </ul>
             </div>
 
             {/* 7. Uw rechten */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">7. Wat zijn uw rechten?</h2>
-              <p className="leading-relaxed mb-4">
-                U heeft recht op inzage, rectificatie of verwijdering van uw persoonsgegevens. Daarnaast heeft u 
-                het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken 
-                tegen de verwerking van uw persoonsgegevens door Zeilmakerij Liva.
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">7. Uw rechten</h2>
+              <p className="leading-relaxed mb-8">
+                U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Tevens kunt u een verzoek indienen voor gegevensoverdracht.
               </p>
-              <p className="leading-relaxed mb-4">
-                U heeft tevens het recht op gegevensoverdraagbaarheid. Dat betekent dat u bij ons een verzoek 
-                kunt indienen om de persoonsgegevens die wij van u beschikken in een computerbestand naar u of 
-                een ander, door u genoemde organisatie, te sturen.
-              </p>
-              <div className="bg-primary/5 border-l-4 border-accent p-6 rounded-sm">
-                <p className="text-gray-700 font-medium mb-2">
-                  <strong>Verzoek indienen?</strong>
+              <div className="bg-accent p-8 rounded-sm text-white">
+                <h3 className="text-xl font-black uppercase tracking-tighter mb-2">Recht uitoefenen?</h3>
+                <p className="mb-4 text-white/90 font-medium text-sm">
+                  Stuur een gespecificeerd verzoek naar onderstaand emailadres. Wij reageren uiterlijk binnen 4 weken.
                 </p>
-                <p className="text-gray-600 text-sm mb-2">
-                  U kunt een verzoek tot inzage, correctie, verwijdering of gegevensoverdraging van uw 
-                  persoonsgegevens sturen naar <a href="mailto:info@zeilmakerijliva.nl" className="text-accent hover:underline">info@zeilmakerijliva.nl</a>.
-                </p>
-                <p className="text-gray-500 text-xs italic">
-                  Wij reageren zo snel mogelijk, maar binnen vier weken, op uw verzoek.
-                </p>
+                <a href="mailto:info@beltechniek.nl" className="inline-block border-2 border-white px-6 py-2 font-black uppercase tracking-widest text-xs hover:bg-white hover:text-accent transition-colors">
+                  Contact Privacy Officer
+                </a>
               </div>
             </div>
 
             {/* 8. Cookies */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">8. Cookies</h2>
+            <div className="mb-12">
+              <h2 className="text-2xl font-black uppercase tracking-tighter text-primary mb-6">8. Cookies</h2>
               <p className="leading-relaxed">
-                Onze website maakt gebruik van functionele cookies die noodzakelijk zijn voor het goed functioneren 
-                van de website. Deze cookies verzamelen geen persoonsgegevens. Wij gebruiken geen tracking cookies 
-                of analytische cookies zonder uw expliciete toestemming.
-              </p>
-            </div>
-
-            {/* 9. Klachten */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">9. Klachten</h2>
-              <p className="leading-relaxed">
-                Mocht u een klacht hebben over de verwerking van uw persoonsgegevens, dan vragen wij u hierover 
-                direct contact met ons op te nemen. U heeft ook het recht een klacht in te dienen bij de Autoriteit 
-                Persoonsgegevens. Dit is de toezichthoudende autoriteit op het gebied van privacybescherming.
-              </p>
-            </div>
-
-            {/* 10. Wijzigingen */}
-            <div className="mb-10">
-              <h2 className="text-2xl font-bold font-special text-primary mb-4">10. Wijzigingen in deze Privacy Policy</h2>
-              <p className="leading-relaxed">
-                Zeilmakerij Liva behoudt zich het recht voor om wijzigingen aan te brengen in deze Privacy Policy. 
-                Wij raden u aan om deze Privacy Policy regelmatig te raadplegen, zodat u van deze wijzigingen 
-                op de hoogte bent.
+                Onze website maakt gebruik van functionele en geanonimiseerde analytische cookies om de gebruikerservaring te verbeteren. Deze cookies hebben geen impact op uw privacy en bevatten geen persoonsgegevens.
               </p>
             </div>
 
             {/* Contact Blok */}
-            <div className="bg-gray-50 rounded-sm p-8 mt-12 border-l-4 border-accent">
-              <h3 className="text-xl font-bold font-special text-primary mb-4">Vragen over deze Privacy Policy?</h3>
-              <p className="text-gray-600 mb-6">
-                Heeft u na het lezen van deze Privacy Policy nog vragen? Neem dan gerust contact met ons op:
+            <div className="bg-gray-50 rounded-sm p-10 mt-20 border-l-8 border-primary relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+              <h3 className="text-xl font-black uppercase tracking-tighter text-primary mb-4">Vragen over uw privacy?</h3>
+              <p className="text-gray-600 mb-8 font-medium">
+                Voor vragen over ons privacybeleid kunt u contact opnemen met:
               </p>
-              <div className="space-y-3 text-gray-700">
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-primary w-20">Email:</span> 
-                  <a href="mailto:info@zeilmakerijliva.nl" className="text-accent hover:underline">info@zeilmakerijliva.nl</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-primary w-20">Telefoon:</span> 
-                  <a href="tel:0356228460" className="text-accent hover:underline">035 622 8460</a>
-                </p>
-                <p className="flex items-center gap-2">
-                  <span className="font-bold text-primary w-20">Adres:</span> 
-                  <span>Horndijk 24, 1231 NK Loosdrecht</span>
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <div className="space-y-2">
+                  <p className="text-accent font-black uppercase tracking-widest text-[9px]">Email Support</p>
+                  <a href="mailto:info@beltechniek.nl" className="text-lg font-bold text-primary hover:text-accent transition-colors">info@beltechniek.nl</a>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-accent font-black uppercase tracking-widest text-[9px]">Telefonische Support</p>
+                  <a href="tel:+31614987347" className="text-lg font-bold text-primary hover:text-accent transition-colors">+31 6 14987347</a>
+                </div>
               </div>
             </div>
 

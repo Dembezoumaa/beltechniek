@@ -7,31 +7,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Jouw Zeilmakerij Liva palet
+        // Beltechniek B.V. - Industrieel & Zakelijk palet
         primary: {
-          DEFAULT: '#0F4F67', // Navy Blue
-          dark: '#092E42',    // Deep Navy
+          DEFAULT: '#1B263B', // Deep Industrial Navy
+          dark: '#0D1B2A',    // Dark Slate
           foreground: '#FFFFFF', 
         },
-        secondary: '#4A8CA2', // Ocean Blue
-        accent: '#A28A77',    // Timber Accent
+        secondary: '#415A77', // Steel Blue/Grey
+        accent: '#3A86FF',    // Electric Blue accent
         
-        // Tekstkleuren
+        // Tekstkleuren voor B2B leesbaarheid
         text: {
-          main: '#3C3033',    
-          muted: '#676369',   
-          light: '#A1AAB8',   
+          main: '#1B263B',    
+          muted: '#5A6169',   
+          light: '#8D99AE',   
         },
         
-        border: '#DDECF9',
+        border: '#E2E8F0',
       },
       fontFamily: {
-        // Standaard tekst
         sans: ['var(--font-inter)', 'sans-serif'], 
-        
-        // HIER IS DE AANPASSING:
-        // We laten 'font-special' nu OOK naar 'Inter' wijzen.
-        // Zo blijven je pagina's werken, maar ziet het er weer strak uit.
         special: ['var(--font-inter)', 'sans-serif'],
       },
     },

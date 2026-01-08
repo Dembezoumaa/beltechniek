@@ -7,12 +7,12 @@ function Projects() {
         
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-sm text-accent font-bold uppercase tracking-widest mb-3">Portfolio</p>
-          <h2 className="text-3xl md:text-5xl font-bold font-special text-primary mb-4">
-            Vakmanschap in beeld
+          <p className="text-sm text-accent font-bold uppercase tracking-widest mb-3 italic">Referentieprojecten</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-tighter">
+            Expertise in de praktijk
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Van strak gespannen buiskappen tot perfect afgewerkte stoffering. Elk project wordt met zorg en precisie uitgevoerd.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
+            Van complexe elektrotechnische installaties tot geavanceerde inbraakbeveiliging. Wij leveren hoogwaardige oplossingen voor de meest veeleisende industriële omgevingen.
           </p>
         </div>
         
@@ -21,20 +21,19 @@ function Projects() {
           
           {/* Linker kolom */}
           <div className="flex flex-col gap-3 md:gap-6">
-            <div className="relative overflow-hidden rounded-sm h-[200px] md:h-[400px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[200px] md:h-[400px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project1.jpg" 
-                alt="Buiskap op maat" 
+                alt="Elektrotechnische installatie" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              {/* Overlay met titel (optioneel, verschijnt bij hover) */}
               <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors duration-300"></div>
             </div>
-            <div className="relative overflow-hidden rounded-sm h-[180px] md:h-[300px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[180px] md:h-[300px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project2.jpg" 
-                alt="Bootstoffering detail" 
+                alt="Meet- en regeltechniek systeem" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -43,18 +42,18 @@ function Projects() {
           
           {/* Midden kolom */}
           <div className="flex flex-col gap-3 md:gap-6">
-            <div className="relative overflow-hidden rounded-sm h-[160px] md:h-[250px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[160px] md:h-[250px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project3.jpg" 
-                alt="Afdekzeil strak gespannen" 
+                alt="Inbraakbeveiliging industrie" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
             </div>
-            <div className="relative overflow-hidden rounded-sm h-[220px] md:h-[350px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[220px] md:h-[350px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project4.jpg" 
-                alt="Biminitop montage" 
+                alt="Besturingspaneel montage" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -63,18 +62,18 @@ function Projects() {
           
           {/* Rechter kolom */}
           <div className="flex flex-col gap-3 md:gap-6 col-span-2 md:col-span-1">
-            <div className="relative overflow-hidden rounded-sm h-[200px] md:h-[300px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[200px] md:h-[300px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project5.jpg" 
-                alt="Interieur kussens" 
+                alt="Industriële automatisering" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
             </div>
-            <div className="relative overflow-hidden rounded-sm h-[220px] md:h-[400px] group cursor-pointer shadow-md">
+            <div className="relative overflow-hidden rounded-sm h-[220px] md:h-[400px] group cursor-pointer shadow-md border border-gray-100">
               <img 
                 src="/project6.jpg" 
-                alt="Reparatie zeildoek" 
+                alt="Onderhoud technische installatie" 
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
@@ -83,26 +82,26 @@ function Projects() {
         </div>
         
         {/* Navy Blue Balk (CTA Section) */}
-        <div className="bg-primary rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+        <div className="bg-primary rounded-sm p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl relative overflow-hidden border-b-4 border-accent">
            {/* Decoratieve gloed */}
-           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+           <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
           <div className="relative z-10 text-center md:text-left">
-            <h3 className="text-2xl md:text-4xl font-bold font-special text-white mb-3">
-              Klaar om uw boot te laten beschermen?
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 uppercase tracking-tighter">
+              Uw technische uitdaging, <br /> onze expertise.
             </h3>
-            <p className="text-white/80 text-base md:text-lg max-w-xl font-light">
-              Neem vrijblijvend contact op voor advies, een offerte of een afspraak voor inmeten.
+            <p className="text-white/70 text-base md:text-lg max-w-xl font-medium">
+              Bent u op zoek naar een betrouwbare partner voor installatie, beheer of onderhoud? Neem direct contact op voor een vrijblijvend adviesgesprek.
             </p>
           </div>
 
           {/* KNOP */}
           <Link 
             href="/contact"
-            className="relative z-10 bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap tracking-wide"
+            className="relative z-10 bg-accent text-white px-10 py-5 rounded-sm font-bold hover:bg-white hover:text-primary transition-all duration-300 shadow-xl hover:-translate-y-1 flex items-center gap-3 whitespace-nowrap tracking-widest uppercase text-sm"
           >
-            OFFERTE AANVRAGEN
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            Project starten
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="M12 5l7 7-7 7" />
             </svg>
