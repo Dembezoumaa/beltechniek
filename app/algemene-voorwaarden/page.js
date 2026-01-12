@@ -115,12 +115,12 @@ export default function AlgemeneVoorwaarden() {
                 <div>
                   <p className="text-accent font-black uppercase tracking-widest text-[10px] mb-1">Organisatie</p>
                   <p className="text-white font-bold">Beltechniek B.V.</p>
-                  <p className="text-white/60">Industrieweg 12, 1234 AB</p>
+                  <p className="text-white/60">'s-GravenhageFlorence Nightingaleweg 5</p>
                 </div>
                 <div>
                   <p className="text-accent font-black uppercase tracking-widest text-[10px] mb-1">Direct Contact</p>
                   <p className="text-white font-bold">info@beltechniek.nl</p>
-                  <p className="text-white font-bold">+31 6 14987347</p>
+                  <p className="text-white font-bold">+31 6 86326522</p>
                 </div>
               </div>
             </div>

@@ -36,14 +36,14 @@ export default function Privacy() {
                 <p className="text-accent mb-4 font-black uppercase text-[10px] tracking-[0.3em]">Contactgegevens:</p>
                 <div className="text-white/80 space-y-1 font-medium">
                   <p className="text-white font-bold uppercase tracking-tight">Beltechniek B.V.</p>
-                  <p>Industrieweg 12</p>
-                  <p>1234 AB, Nederland</p>
-                  <p>KVK: 12345678</p>
+                  <p>Florence Nightingaleweg 5</p>
+                  <p>2545 CD, s-Gravenhage</p>
+                  <p>KVK: 95930043</p>
                   <p className="pt-4">
                     Email: <a href="mailto:info@beltechniek.nl" className="text-accent hover:text-white transition-colors">info@beltechniek.nl</a>
                   </p>
                   <p>
-                    Telefoon: <a href="tel:+31614987347" className="text-accent hover:text-white transition-colors">+31 6 14987347</a>
+                    Telefoon: <a href="tel:+31686326522" className="text-accent hover:text-white transition-colors">+31 6 86326522</a>
                   </p>
                 </div>
               </div>

@@ -272,7 +272,7 @@ export default function OverOns() {
                 Service Aanvraag
               </Link>
               <a 
-                href="tel:+31614987347"
+                href="tel:+31686326522"
                 className="border border-white/20 bg-white/5 text-white px-10 py-5 font-black uppercase tracking-widest hover:bg-white/10 transition-all text-center text-sm"
               >
                 📞 Direct bellen
