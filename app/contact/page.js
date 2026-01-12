@@ -175,15 +175,15 @@ export default function Contact() {
                   <div>
                     <p className="text-accent font-black uppercase text-[10px] tracking-[0.3em] mb-2">Hoofdkantoor</p>
                     <p className="text-xl font-bold uppercase tracking-tighter">Beltechniek B.V.</p>
-                    <p className="text-white/60 font-medium">Industrieweg 12</p>
-                    <p className="text-white/60 font-medium">1234 AB, Nederland</p>
+                    <p className="text-white/60 font-medium">Florence Nightingaleweg 5</p>
+                    <p className="text-white/60 font-medium">2545 CD, ’s-Gravenhage</p>
                   </div>
 
                   <div>
                     <p className="text-accent font-black uppercase text-[10px] tracking-[0.3em] mb-2">Direct Contact</p>
                     <p className="text-2xl font-black tracking-tight mb-1">
-                      <a href="tel:+31614987347" className="hover:text-accent transition-colors">
-                        +31 6 14987347
+                      <a href="tel:+31686326522" className="hover:text-accent transition-colors">
+                        +31 6 86326522
                       </a>
                     </p>
                     <p className="text-lg font-bold text-white/80">
@@ -196,7 +196,7 @@ export default function Contact() {
                   <div className="pt-6 border-t border-white/5 grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-white/40 text-[9px] font-black uppercase tracking-widest mb-1">KVK Nummer</p>
-                      <p className="text-sm font-bold">12345678</p>
+                      <p className="text-sm font-bold">95930043</p>
                     </div>
                     <div>
                       <p className="text-white/40 text-[9px] font-black uppercase tracking-widest mb-1">BTW Nummer</p>
