@@ -7,6 +7,7 @@ const inter = Inter({
 });
 
 export const metadata = {
+  // Gebruik het volledige domein als basis voor alle metadata paden
   metadataBase: new URL('https://www.beltechniekbv.nl'), 
 
   title: {
@@ -39,10 +40,10 @@ export const metadata = {
     siteName: 'Beltechniek B.V.',
     images: [
       {
-        url: '/logo.png', 
-        width: 1200,
-        height: 630,
-        alt: 'Beltechniek B.V. Logo',
+        url: '/og-banner.jpg', // Verwijst naar je nieuwe 16:9 banner
+        width: 1200,           // Breedte voor 16:9
+        height: 675,          // Hoogte voor 16:9 ratio
+        alt: 'Beltechniek B.V. - Technische Continuïteit',
       },
     ],
     locale: 'nl_NL',
@@ -50,10 +51,10 @@ export const metadata = {
   },
 
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary_large_image', // Zorgt voor de grote afbeelding op Twitter/X
     title: 'Beltechniek B.V. | Partner in Technische Continuïteit',
     description: 'Landelijke dekking voor industriële elektrotechniek, paneelbouw en 24/7 storingsdiensten.',
-    images: ['/logo.png'], 
+    images: ['/og-banner.jpg'], 
   },
 };
 
@@ -62,7 +63,7 @@ export default function RootLayout({ children }) {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService', 
     'name': 'Beltechniek B.V.',
-    'image': 'https://www.beltechniekbv.nl/logo.png',
+    'image': 'https://www.beltechniekbv.nl/og-banner.jpg', // Banner voor Google zoekresultaten
     'description': 'Specialist in industriële elektrotechniek, paneelbouw en 24/7 storingsdiensten voor de industrie.',
     'address': {
       '@type': 'PostalAddress',
@@ -93,6 +94,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
+        {/* Subtiele achtergrond voor industriële look */}
         <div className="fixed inset-0 opacity-[0.02] -z-10 pointer-events-none" 
              style={{ 
                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
